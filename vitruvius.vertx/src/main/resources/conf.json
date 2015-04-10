@@ -1,0 +1,47 @@
+{
+  "port": 7000,
+  "oauth_token": "NOT_A_REAL_OAUTH_TOKEN",
+  "repos": [
+//    {
+//      "name": "Income Service",
+//      "uri": "../repository/incomeTaxService"
+//    },
+//    {
+//      "name": "People Look Up Service",
+//      "uri": "../repository/peopleLookUpService"
+//    },
+//    {
+//      "name": "Car Tax Service",
+//      "uri": "../repository/carTaxService"
+//    },
+//    {
+//      "name": "Payment Component",
+//      "uri": "../repository/paymentComponent"
+//    },
+//    {
+//      "name": "Dao Component",
+//      "uri": "../repository/daoComponent"
+//    },
+    {
+      "name": "National Asylum Support Service",
+      "uri": "../repository/asys"
+    },
+    {
+      "name": "Asys Data",
+      "uri": "../repository/asys/data"
+    },
+    {
+      "name": "Sample",
+      "uri": "https://api.github.com/repos/aminmc/sample"
+    },
+    {
+      "name": "Accelerated Claims",
+      "uri": "https://github.com/ministryofjustice/accelerated_claims"
+    },
+    {
+      "name": "Cotton",
+      "uri": "https://github.com/ministryofjustice/cotton"
+    }
+
+  ]
+}

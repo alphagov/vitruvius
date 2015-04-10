@@ -1,0 +1,48 @@
+<div class="container">
+    <h3>{{message}}</h3>
+
+    <form name="registerform" role="form" class="form-horizontal" ng-submit="register()">
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="serviceName">Repository Name :</label>
+
+            <div class="col-sm-10">
+                <input type="text" ng-model="serviceName" id="serviceName" required/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="address">Github Address :</label>
+
+            <div class="col-sm-10">
+                <input type="text" ng-model="address" id="address" ng-change="reset()" required/>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-primary" ng-disabled="registerform.$invalid || isValidating">
+                    Register
+                </button>
+            </div>
+        </div>
+    </form>
+    <h3>Things to check before you add an entry</h3>
+    <li>Does the repository you are adding have a 'vitruvius.md' file in it's root directory?  If not please use the <a href="/views/documents/template.md" target="_blank"><strong>template</strong></a></li>
+    <li>Has the 'vitruvius.md' file passed validation.  If not you can validate it <a href="#/validate"><strong>here</strong></a></li>
+    <li>Use the <strong><a href="/views/documents/PlantUML_Language_Reference_Guide.pdf" target="_blank">reference guide</a></strong> for text based UML. Please note @startuml and @enduml is not necessary.</li>
+    <div>
+        <div align="center" ng-show="isLoading">
+            <img ng-src='images/loading.gif'/>
+            <div>Validating</div>
+        </div>
+        <br/>
+
+        <div ng-if="validationErrors.length == 0 && validationPerformed" class="alert alert-success" role="alert">
+            No validation errors. {{serviceName}} has been added to Vitruvius
+        </div>
+
+        <div class="container-fluid" ng-if="validationErrors.length != 0 && validationPerformed">
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-danger" style="word-wrap: break-word;" ng-repeat="message in validationErrors">{{message.message}}</li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+<div class="row row-offcanvas row-offcanvas-left">
+    <div class="col-xs-6 col-sm-2 sidebar-offcanvas" id="sidebar" role="navigation" ng-controller="FacetController"
+         ng-include src="'/views/partials/facet.html'">
+    </div>
+    <div class="col-xs-12 col-sm-10">
+        <div class="row">
+            <div ng-if="isLoading">
+                <div align="center" ng-show="isLoading">
+                    <img ng-src='images/loading.gif'/>
+                </div>
+            </div>
+            <div ng-if="!isLoading">
+                <div ng-if="errorMessages.length != 0">
+                    <div ng-repeat="message in errorMessages">
+                        <div class="alert alert-danger alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert"><span
+                                    aria-hidden="true">&times;</span><span
+                                    class="sr-only">Close</span></button>
+                            {{message}}
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    $(document).ready(function () {
+                        $('[data-toggle="offcanvas-search"]').click(function () {
+                            $('.row-offcanvas').toggleClass('active')
+                        });
+                    });
+                </script>
+                <div class="container pull-left visible-xs">
+                    <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas-search">Facet Toggle
+                    </button>
+                </div>
+                <div ng-if="errorMessages.length == 0">
+                    <div ng-if="repositoryData.length > 0" style="margin: 10px 15px 20px;">
+                        <p>Total Results <span class="badge">{{repositoryData.length}}</span></p>
+                        <div role="tabpanel">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a ng-click="setTypeFilter('')" aria-controls="services" role="tab" data-toggle="tab">All</a></li>
+                                <li role="presentation"><a ng-click="setTypeFilter('service')" aria-controls="services" role="tab" data-toggle="tab">Services</a></li>
+                                <li role="presentation"><a ng-click="setTypeFilter('component')" aria-controls="components" role="tab" data-toggle="tab">Components</a></li>
+                                <li role="presentation"><a ng-click="setTypeFilter('data')" aria-controls="data" role="tab" data-toggle="tab">Data</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div ng-if="repositoryData.length == 0" style="margin: 10px 15px 20px;">
+                        <p><h4>No results for <i><strong>{{originalQuery}}</strong></i></h4></p>
+                    </div>
+
+                    <div ng-include="'/views/partials/repository.html'"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

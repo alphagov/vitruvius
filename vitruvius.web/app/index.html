@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="vitruvius">
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css?v=201303081202">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+</head>
+<script src="scripts/vendor/sockjs-0.3.4.min.js"></script>
+<script src="scripts/vendor/vertxbus-2.1.js"></script>
+<script src="scripts/vendor/jquery-2.0.0.js"></script>
+<script src="scripts/vendor/bootstrap.min.js"></script>
+
+<script src="scripts/vendor/angular.min.js"></script>
+<script src="scripts/vendor/angular-route.min.js"></script>
+<script src="scripts/vendor/angular-sanitize.min.js"></script>
+<script src="scripts/vendor/underscore-min.js"></script>
+
+<script src="scripts/vendor/notify-custom.min.js"></script>
+<script src="scripts/vendor/notify-bootstrap.js"></script>
+
+
+<script src="scripts/vendor/elasticsearch.angular.js"></script>
+<script src="scripts/vendor/angular-underscore-module.js"></script>
+<script src="scripts/vendor/raphael.js"></script>
+<script src="scripts/vendor/raphael-min.js"></script>
+<script src="scripts/vendor/sequence-diagram-min.js"></script>
+<script src="scripts/model.js"></script>
+<script src="scripts/vertx-util.js"></script>
+<script src="scripts/engine-app.js"></script>
+<script src="scripts/controllers/controllers.js"></script>
+<script src="scripts/services/services.js"></script>
+
+<script src="scripts/directives/directives.js"></script>
+<script src="scripts/filters/filters.js"></script>
+
+
+<body>
+
+
+
+<div class="navbar navbar-fixed-top navbar-inverse" role="navigation" ng-controller="HeaderController" ng-include
+     src="'/views/partials/header.html'">
+</div>
+<div class="container-fluid" ng-view>
+</div>
+</body>
+</html>

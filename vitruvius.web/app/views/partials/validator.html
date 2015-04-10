@@ -1,0 +1,53 @@
+<div class="container-fluid">
+    <form name="markdownform" role="form" ng-submit="validate()">
+        <div class="form-group">
+            <label for="markdown">Enter markdown for validation</label>
+
+            <div class="input-group"
+                 ng-class="{ 'has-success' : validationPerformed && validationErrors.length == 0 && validationWarnings.length == 0,
+                             'has-error' : validationPerformed && validationErrors.length != 0,
+                             'has-warning' : validationPerformed && validationErrors.length == 0 && validationWarnings.length != 0}">
+                <textarea class="form-control" id="markdown" ng-model="markdown" rows="20" ng-change="reset()"
+                          required></textarea>
+                <span class="input-group-addon">
+                    <i ng-class="{'glyphicon glyphicon-ok form-control-feedback':  validationPerformed && validationErrors.length == 0 && validationWarnings.length == 0,
+                                  'glyphicon glyphicon-remove form-control-feedback' : validationPerformed && validationErrors.length != 0,
+                                  'glyphicon glyphicon-warning-sign form-control-feedback' : validationPerformed && validationErrors.length == 0 && validationWarnings.length != 0}"/>
+                </span>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary" ng-disabled="markdownform.$invalid || isValidating">Validate</button>
+    </form>
+
+    <div>
+        <div align="center" ng-show="isLoading">
+            <img ng-src='images/loading.gif'/>
+
+            <div>Validating</div>
+        </div>
+        <br/>
+
+        <div ng-if="validationErrors.length == 0 && validationWarnings.length == 0 && validationPerformed">
+            No validation errors
+        </div>
+        <div ng-if="validationErrors.length == 0 && validationWarnings.length != 0 && validationPerformed">
+            No validation errors but there are warnings
+        </div>
+        <div class="container-fluid">
+            <table class="table table-bordered">
+                <tr ng-repeat="message in validationErrors">
+                    <td class="danger">{{message.message}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="container-fluid">
+            <table class="table table-bordered">
+                <tr ng-repeat="message in validationWarnings">
+                    <td class="warning">{{message.message}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+</div>

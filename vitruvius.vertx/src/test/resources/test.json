@@ -1,0 +1,30 @@
+{
+    "services": [],
+    "components": [
+        {
+            "description": "Used for Database interaction",
+            "name": "Dao Component",
+            "link": "../repository/daoComponent"
+        }
+    ],
+    "data": [
+        {
+            "description": null,
+            "name": "Asys",
+            "link": "../repository/asys"
+        }
+    ],
+    "meta": {
+        "status": "Live",
+        "description": "Very brief description of this service again.",
+        "author": "Amin Mohammed-Coleman <amin.mohammed-coleman@digital.cabinet-office.gov.uk>",
+        "lastUpdated": "22/08/2015",
+        "version": "0.2",
+        "department": "departmentB",
+        "tags": "lookup",
+        "type": "service"
+    },
+    "repoUri": "../repository/peopleLookUpService",
+    "link": "../repository/peopleLookUpService",
+    "serviceName": "People Look Up Service"
+}

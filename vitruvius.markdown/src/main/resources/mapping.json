@@ -1,0 +1,68 @@
+{
+  "service": {
+    "properties": {
+      "serviceName": {
+        "type": "string",
+        "fields": {
+          "serviceName.raw": {
+            "type": "string",
+            "index": "not_analyzed"
+          }
+        }
+      },
+      "meta": {
+        "properties": {
+          "tags": {
+            "type": "string",
+            "fields": {
+              "tags.raw": {
+                "type": "string",
+                "index": "not_analyzed"
+              }
+            }
+          },
+          "author": {
+            "type": "string",
+            "fields": {
+              "author.raw": {
+                "type": "string",
+                "index": "not_analyzed"
+              }
+            }
+          },
+          "lastUpdated": {
+            "type": "date",
+            "format": "dateOptionalTime"
+          },
+          "status": {
+            "type": "string",
+            "fields": {
+              "status.raw": {
+                "type": "string",
+                "index": "not_analyzed"
+              }
+            }
+          },
+          "department": {
+            "type": "string",
+            "fields": {
+              "department.raw": {
+                "type": "string",
+                "index": "not_analyzed"
+              }
+            }
+          },
+          "type": {
+            "type": "string",
+            "fields": {
+              "type.raw": {
+                "type": "string",
+                "index": "not_analyzed"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

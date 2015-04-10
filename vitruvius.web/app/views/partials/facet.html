@@ -1,0 +1,55 @@
+<section ng-if="statuses.length != 0">
+    <div>
+        <h5>Department</h5>
+
+        <div align="center" ng-show="facetLoading">
+            <img ng-src='images/loading.gif'/>
+
+            <div>Loading departments</div>
+        </div>
+
+        <ul class="nav" ng-repeat="department in departments">
+            <li>
+                <a href="#/search?query={{facet('department.raw', department.key)}}{{typeField}}">
+                    {{department.key}} <span class="badge pull-right">{{department.doc_count}}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
+<section ng-if="statuses.length != 0">
+    <div>
+        <h5>Status</h5>
+
+        <div align="center" ng-show="facetLoading">
+            <img ng-src='images/loading.gif'/>
+
+            <div>Loading statuses</div>
+        </div>
+        <ul class="nav" ng-repeat="status in statuses">
+            <li>
+                <a href="#/search?query={{facet('status.raw', status.key)}}{{typeField}}">
+                    {{status.key}} <span class="badge  pull-right">{{status.doc_count}}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
+<section ng-if="tags.length != 0">
+    <div>
+        <h5>Tags</h5>
+
+        <div align="center" ng-show="facetLoading">
+            <img ng-src='images/loading.gif'/>
+
+            <div>Loading tags</div>
+        </div>
+        <ul class="nav" ng-repeat="tag in tags">
+            <li>
+                <a href="#/search?query={{facet('tags.raw', tag.key)}}{{typeField}}">
+                    {{tag.key}} <span class="badge  pull-right">{{tag.doc_count}}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>

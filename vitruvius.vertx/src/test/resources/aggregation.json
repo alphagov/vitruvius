@@ -1,0 +1,292 @@
+{
+  "took": 3,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "failed": 0
+  },
+  "hits": {
+    "total": 7,
+    "max_score": 0.17668277,
+    "hits": [
+      {
+        "_index": "services",
+        "_type": "service",
+        "_id": "3b83a106-f189-3904-8d0f-ac6ee652c9ee",
+        "_score": 0.17668277,
+        "_source": {
+          "services": [],
+          "components": [
+            {
+              "description": "Used for Database interaction",
+              "name": "Dao Component",
+              "link": "../repository/daoComponent"
+            }
+          ],
+          "data": [],
+          "meta": {
+            "status": "Live",
+            "description": "Very brief description of this service again.",
+            "author": "Amin Mohammed-Coleman <amin.mohammed-coleman@digital.cabinet-office.gov.uk>",
+            "lastUpdated": "Tue Nov 18 10:37:57 EST 2014",
+            "version": "0.2",
+            "department": "departmentB",
+            "tags": "lookup",
+            "type": "service"
+          },
+          "repoUri": "../repository/peopleLookUpService",
+          "link": "../repository/peopleLookUpService",
+          "serviceName": "People Look Up Service",
+          "markdown": "%%%MetaData\nstatus: Live\nversion: 0.2\nauthor: Amin Mohammed-Coleman <amin.mohammed-coleman@digital.cabinet-office.gov.uk>\ndescription: Very brief description of this service again.  \ndepartment: departmentB\ntags: lookup\ntype: service\n%%%\n\n# Look up service \n\n# Context\n\nUsed to look up individual details.\n\n# Components\nThe following components where used to build this example service\n%%%Component\nname: Dao Component\ndescription: Used for Database interaction\nlink: ../repository/daoComponent\n%%%  \n\n\n# Further Reading\n\nTest\t\n\n"
+        }
+      },
+      {
+        "_index": "services",
+        "_type": "service",
+        "_id": "06c22948-98a3-3e73-b90f-b7fe58760906",
+        "_score": 0.15422136,
+        "_source": {
+          "services": [
+            {
+              "description": "Used for looking people up",
+              "name": "PeopleLookUpService",
+              "link": "../repository/peopleLookUpService"
+            }
+          ],
+          "components": [
+            {
+              "description": "Used for Database interaction",
+              "name": "Dao Component",
+              "link": "../repository/daoComponent"
+            },
+            {
+              "description": "Used for payements",
+              "name": "Payment Component",
+              "link": "../repository/paymentComponent"
+            }
+          ],
+          "data": [],
+          "meta": {
+            "status": "Beta",
+            "description": "Car tax service 12",
+            "author": "Amin Mohammed-Coleman <amin.mohammed-coleman@digital.cabinet-office.gov.uk>",
+            "lastUpdated": "Tue Nov 18 10:37:57 EST 2014",
+            "version": "0.1",
+            "department": "departmentA",
+            "tags": "car, tax",
+            "type": "service"
+          },
+          "repoUri": "../repository/carTaxService",
+          "link": "../repository/carTaxService",
+          "serviceName": "Car Tax Service",
+          "markdown": "%%% MetaData\nstatus: Beta\nversion: 0.1\nauthor: Amin Mohammed-Coleman <amin.mohammed-coleman@digital.cabinet-office.gov.uk>\ndescription: Car tax service 12\ndepartment: departmentA\ntags: car, tax\ntype: service\n%%%\n\n# Car Tax Service \n\n\n# Context\n\nUsed to pay tax on your car.\n\n\n# Components\n\nThe following components where used to build this example service\n%%%Component\nname: Dao Component\ndescription: Used for Database interaction\nlink: ../repository/daoComponent\n%%%  \n%%%Component\nname: Payment Component\ndescription: Used for payements\nlink: ../repository/paymentComponent\n%%%\n\n\n%%%Uml\ninterface \"Data Access\" as DA\n\nDA - [First Component]\n[First Component] ..> HTTP : use\n\nnote left of HTTP : Web Service only\n\nnote right of [First Component]\n  A note can also\n  be on several lines\nend note\n%%%\n\n# Services\n\nThe following section defines the other services used in order to perform the required business function.\n\n%%%Service\nname: PeopleLookUpService\ndescription: Used for looking people up\nlink: ../repository/peopleLookUpService\n%%%\n\n\n# Transactions\n\nIn order to fulfil the requirements of the business service, our service has to perform interaction with multiple other services. The following shows how my example service interacts with the other services defined in this architecture document.\n\n%%%sequence style=napkin\nMyService->PeopleLookUpService: Find Person and Test\nNote right of PeopleLookUpService: PeopleLookUpService performs a look up\nPeopleLookUpService-->MyService: Returns an individual\nMyService->>PeopleLookUpService: Confirmation\n%%%\n\n\n\n# Further Reading\n\nTest\t\n\n"
+        }
+      },
+      {
+        "_index": "services",
+        "_type": "service",
+        "_id": "05680523-0d30-38ab-99de-34bb174e5bf9",
+        "_score": 0.12288994,
+        "_source": {
+          "services": [],
+          "components": [
+            {
+              "description": "Used for Database interaction",
+              "name": "Dao Component",
+              "link": "../repository/daoComponent"
+            }
+          ],
+          "data": [],
+          "meta": {
+            "status": "Draft",
+            "description": "Sample Business Service",
+            "author": "Amin Mohammed-Coleman <amin.mohammed-coleman@digital.cabinet-office.gov.uk>",
+            "lastUpdated": "Fri Nov 14 06:27:18 EST 2014",
+            "version": "1.0",
+            "department": "departmentC",
+            "tags": null,
+            "type": "component"
+          },
+          "repoUri": "https://api.github.com/repos/aminmc/sample",
+          "link": "https://github.com/aminmc/sample",
+          "serviceName": "sample",
+          "markdown": "%%%MetaData\nauthor: Amin Mohammed-Coleman <amin.mohammed-coleman@digital.cabinet-office.gov.uk>\ndescription: Example Service Definition \ntype: component\ndepartment: departmentC\nstatus: Draft\nversion: 1.0\n%%%\n\n\n# People Look Up Service\n\nExample People look up service.\n\nTest business service.\n\n# Context\n\nThe following components where used to build this.\n%%%Component\nname: Dao Component\ndescription: Used for Database interaction\nlink: ../repository/daoComponent\n%%%  \n\n\n\n# Transactions\nIn order to fulfil the requirements of the business service, our has to perform interaction with multiple other services. The following shows how my example service interacts with the other services defined.\n%%%sequence\nMyService->PeopleLookUpService: Find Person\nNote right of PeopleLookUpService: PeopleLookUpService performs a look up\nPeopleLookUpService-->MyService: Returns an individual\nMyService->>PeopleLookUpService: Confirmation.\n%%%\n\n\n# Further Reading\n\nTest\t\n\n"
+        }
+      },
+      {
+        "_index": "services",
+        "_type": "service",
+        "_id": "9a08c5ee-7adb-322e-81fd-036b344fb2e1",
+        "_score": 0.1028171,
+        "_source": {
+          "services": [
+            {
+              "description": "Used for looking people up",
+              "name": "PeopleLookUpService",
+              "link": "../repository/PeopleLookUpService"
+            }
+          ],
+          "components": [],
+          "data": [],
+          "meta": {
+            "status": "Live",
+            "description": "Used to calculate tax but also can be used to pay taxes.",
+            "author": "Amin Mohammed-Coleman <amin.mohammed-coleman@digital.cabinet-office.gov.uk>",
+            "lastUpdated": "Tue Nov 18 10:37:57 EST 2014",
+            "version": "0.2",
+            "department": "departmentB",
+            "tags": "income, tax",
+            "type": "service"
+          },
+          "repoUri": "../repository/incomeTaxService",
+          "link": "../repository/incomeTaxService",
+          "serviceName": "Income Service",
+          "markdown": "%%%MetaData\nstatus: Live\nversion: 0.2\nauthor: Amin Mohammed-Coleman <amin.mohammed-coleman@digital.cabinet-office.gov.uk>\ndescription: Used to calculate tax but also can be used to pay taxes.\ndepartment: departmentB\ntags: income, tax\ntype: service\n%%%\n\n# Income Tax Service \n\nService for calculating income tax.\n\n# Primary User Needs\n\nUsed to calculate and pay income tax and uses other business services to perform the operation. See example\n\n# Components\n\nThe following components where used to build this example service\n    - name: component one\n      description:\n        Here I describe the component one in some detail. It should\n        perhaps be snapped out as a separate element?        \n\t- name: component two\n\t  description:\n\t   \tHere I describe the component one in some detail. It should\n\t    perhaps be snapped out as a separate element?        \n\t- name: component three\n\t  description:\n\t\tHere I describe the component one in some detail. It should\n\t\tperhaps be snapped out as a separate element?        \n  \n\n# Collaborating Services\n\nThe following section defines the other services used in order to perform the required business function.\n\n%%%Service\nname: PeopleLookUpService\ndescription: Used for looking people up\nlink: ../repository/PeopleLookUpService\n%%%\n\n\n\n# APIs\n\n# Estate\n\n# Data\n\n# Technology\n\n# Hosting\n\n# Role\n\n# Transactions\n\nIn order to fulfil the requirements of the business service, our service has to perform interaction with multiple other services. The following shows how my example service interacts with the other services defined in this architecture document.\n%%%sequence\nMyService->PeopleLookUpService: Find Person\nNote right of PeopleLookUpService: PeopleLookUpService performs a look up\nPeopleLookUpService-->MyService: Returns an info\nMyService->>PeopleLookUpService: Confirmation Done\n%%%\n\n\n# References\n\n# Further Reading\n\nTest\t\n\n"
+        }
+      },
+      {
+        "_index": "services",
+        "_type": "service",
+        "_id": "13fa1cdd-bdb0-3954-a1be-0032d49a988d",
+        "_score": 0.09638835,
+        "_source": {
+          "services": [],
+          "components": [],
+          "data": [],
+          "meta": {
+            "status": "Live",
+            "description": "Example DAO component that may be used by a service or another component",
+            "author": "Amin Mohammed-Coleman <amin.mohammed-coleman@digital.cabinet-office.gov.uk>",
+            "lastUpdated": "Tue Nov 18 10:37:57 EST 2014",
+            "version": "0.2",
+            "department": "departmentA",
+            "tags": "data access",
+            "type": "component"
+          },
+          "repoUri": "../repository/daoComponent",
+          "link": "../repository/daoComponent",
+          "serviceName": "Dao Component",
+          "markdown": "%%%MetaData\nstatus: Live\nversion: 0.2\nauthor: Amin Mohammed-Coleman <amin.mohammed-coleman@digital.cabinet-office.gov.uk>\ndescription: Example DAO component that may be used by a service or another component  \ndepartment: departmentA\ntags: data access\ntype: component\n%%%\n\n# Data Access Component \n\n# Context\n\nGeneric data access component\n\n%%%Uml\n@startuml\ninterface \"Data Access\" as DA\n\nDA - [Dao Component] \n[Dao Component] ..> HTTP : use\n\nnote left of HTTP : Web Service only\n\nnote right of [Dao Component]\n  A note can also\n  be on several lines\nend note\n@enduml\n%%%\n  \n  \n  \n# Further Reading\n\nRead this for more information.\n\n"
+        }
+      },
+      {
+        "_index": "services",
+        "_type": "service",
+        "_id": "3f9662bb-d720-31f3-81a0-586be15a2f1c",
+        "_score": 0.047945753,
+        "_source": {
+          "services": [],
+          "components": [
+            {
+              "description": "Used for Database interaction",
+              "name": "Dao Component",
+              "link": "../repository/daoComponent"
+            }
+          ],
+          "data": [],
+          "meta": {
+            "status": "Beta",
+            "description": "Reusable payment service for taking payments. Public API Example",
+            "author": "Amin Mohammed-Coleman <amin.mohammed-coleman@digital.cabinet-office.gov.uk>",
+            "lastUpdated": "Tue Nov 18 10:37:57 EST 2014",
+            "version": "0.1",
+            "department": "departmentA",
+            "tags": "people, lookup",
+            "type": "component"
+          },
+          "repoUri": "../repository/paymentComponent",
+          "link": "../repository/paymentComponent",
+          "serviceName": "Payment Component",
+          "markdown": "%%%MetaData\nstatus: Beta\nversion: 0.1\nauthor: Amin Mohammed-Coleman <amin.mohammed-coleman@digital.cabinet-office.gov.uk>\ndescription: Reusable payment service for taking payments. Public API Example\ndepartment: departmentA\ntags: people, lookup\ntype: component\n%%%\n\n# Payment Component \n\nUsed to make payments. Use carefully.\n\n# Context\n\nThis service is used to take payments.\n\n\n# Components\n\nThe following components where used to build this example service\n%%%Component\nname: Dao Component\ndescription: Used for Database interaction\nlink: ../repository/daoComponent\n%%%  \n\nSee below for component interaction\n\n%%%Uml\npackage \"Payment\" {\n  PaymentAPI - [Payment Component]\n  PaymentHTTP - [Payment Component]\n}\npackage \"Persistence\" {\n  PersistenceAPI - [Dao Component]\n  [Payment Component] --> PersistenceAPI\n}\n%%%\n\n# Further Reading\n\nTest\n"
+        }
+      }
+    ]
+  },
+  "aggregations": {
+    "tags": {
+      "buckets": [
+        {
+          "key": "lookup",
+          "doc_count": 2
+        },
+        {
+          "key": "tax",
+          "doc_count": 2
+        },
+        {
+          "key": "access",
+          "doc_count": 1
+        },
+        {
+          "key": "car",
+          "doc_count": 1
+        },
+        {
+          "key": "civil",
+          "doc_count": 1
+        },
+        {
+          "key": "claims",
+          "doc_count": 1
+        },
+        {
+          "key": "data",
+          "doc_count": 1
+        },
+        {
+          "key": "exemplar",
+          "doc_count": 1
+        },
+        {
+          "key": "hmcts",
+          "doc_count": 1
+        },
+        {
+          "key": "income",
+          "doc_count": 1
+        }
+      ]
+    },
+    "departments": {
+      "buckets": [
+        {
+          "key": "departmenta",
+          "doc_count": 3
+        },
+        {
+          "key": "departmentb",
+          "doc_count": 2
+        },
+        {
+          "key": "departmentc",
+          "doc_count": 1
+        },
+        {
+          "key": "ds",
+          "doc_count": 1
+        },
+        {
+          "key": "moj",
+          "doc_count": 1
+        }
+      ]
+    },
+    "statuses": {
+      "buckets": [
+        {
+          "key": "live",
+          "doc_count": 4
+        },
+        {
+          "key": "beta",
+          "doc_count": 2
+        },
+        {
+          "key": "draft",
+          "doc_count": 1
+        }
+      ]
+    }
+  }
+}

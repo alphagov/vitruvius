@@ -1,0 +1,47 @@
+<script>
+    $(document).ready(function () {
+        $('[data-toggle="offcanvas"]').click(function () {
+            $('.row-offcanvas').toggleClass('active')
+        });
+    });
+</script>
+<div class="row row-offcanvas row-offcanvas-left">
+    <div class="container pull-left visible-xs">
+        <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Facet Toggle</button>
+    </div>
+    <div class="col-xs-6 col-sm-2 sidebar-offcanvas" id="sidebar" role="navigation" ng-controller="FacetController"
+         ng-include src="'/views/partials/facet.html'">
+    </div>
+
+    <div class="col-xs-12 col-sm-10">
+        <div class="row">
+            <div align="center" ng-show="isLoading">
+                <img ng-src='images/loading.gif'/>
+            </div>
+
+            <div ng-if="errorMessages.length != 0">
+                <div ng-repeat="message in errorMessages">
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span
+                                class="sr-only">Close</span></button>
+                        {{message}}
+                    </div>
+                </div>
+            </div>
+            <div class="container" ng-show="!isLoading && errorMessages.length === 0">
+                <div class="input-group-btn" style="padding-top: 10px">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                            aria-expanded="false">Sort <span class="caret"></span></button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a ng-click="sort('serviceName')">Name</a></li>
+                        <li><a ng-click="sort('author')">Author</a></li>
+                        <li><a ng-click="sort('status')">Status</a></li>
+                        <li><a ng-click="sort('lastUpdated')">Last Updated</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div ng-include="'/views/partials/repository.html'"></div>
+        </div>
+    </div>
+
+</div>

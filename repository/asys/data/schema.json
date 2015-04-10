@@ -1,0 +1,37 @@
+{
+  "schema": "asys",
+  "description": "",
+  "entities": [
+    {
+      "entity": {
+        "name": "TBLACCOMMODATIONGROUP",
+        "attributes": [
+          {
+            "name": "GROUPCODE",
+            "type": "string",
+            "description": "",
+            "title": "A nicer human readable label or title for the field",
+
+          {
+            "name": "ACCOMMODATIONTYPE",
+            "type": "string",
+            "description": "",
+            "title": "A nicer human readable label or title for the field"
+          },
+          {
+            "name": "USERID",
+            "type": "string",
+            "description": "",
+            "title": "A nicer human readable label or title for the field"
+          },
+          {
+            "name": "ACTIONDATE",
+            "type": "date",
+            "description": "",
+            "title": "A nicer human readable label or title for the field"
+          }
+        ]
+      }
+    }
+  ]
+}

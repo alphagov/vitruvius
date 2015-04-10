@@ -1,0 +1,5 @@
+{
+    "main": "uk.gov.prototype.vitruvius.VitruviusVerticle",
+    "auto-redeploy": true,
+    "description": "This module is responsible for collecting service repo information"
+}

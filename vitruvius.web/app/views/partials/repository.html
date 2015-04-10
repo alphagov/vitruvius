@@ -1,0 +1,55 @@
+
+<div ng-if="repositoryData.length != 0">
+    <div class="repo-list-item-container" ng-repeat="repository in repositoryData | typeFilter:typeFilter:''">
+        <div><a class="service-header" ng-click="view(repository.repoUrl)">{{repository.serviceName}}</a></div>
+        <div class="repo-list-item-description">{{repository.metaData.description}}</div>
+        <div ng-if="isGithub(repository.link)"><strong>Github</strong>: <a href="{{repository.link}}" target="_blank">{{repository.link}}</a></div>
+        <div ng-repeat="(attribute, value) in repository.metaData">
+            <div ng-if="attribute != 'collaboratingServices' && attribute != 'collaboratingComponents' && attribute != 'datas' && attribute != 'type'">
+                <div ng-if="attribute != 'description'">
+                    <span class="repo-list-item-label">{{fieldName(attribute)}}:</span><span class="repo-list-item-value">{{value}}</span>
+                </div>
+            </div>
+        </div>
+        <br/>
+
+        <div class="panel panel-default" ng-if="repository.metaData.collaboratingServices.length > 0">
+            <div class="panel-heading">
+                Collaborating Services
+            </div>
+            <table class="table">
+                <tr ng-repeat="collaboratingService in repository.metaData.collaboratingServices">
+                    <td><a ng-click="view(collaboratingService.link)">{{collaboratingService.name}}</a></td>
+
+                </tr>
+            </table>
+        </div>
+        <div class="panel panel-default" ng-if="repository.metaData.collaboratingComponents.length > 0">
+            <div class="panel-heading">
+                Collaborating Components
+            </div>
+            <table class="table">
+                <tr ng-repeat="collaboratingComponent in repository.metaData.collaboratingComponents">
+                    <td><a ng-click="view(collaboratingComponent.link)">{{collaboratingComponent.name}}</a></td>
+
+                </tr>
+            </table>
+        </div>
+        <div class="panel panel-default" ng-if="repository.metaData.datas.length > 0">
+            <div class="panel-heading">
+                Data
+            </div>
+            <table class="table">
+                <tr ng-repeat="data in repository.metaData.datas">
+                    <td><a ng-click="view(data.link)">{{data.name}}</a></td>
+
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+</div>
+<div ng-if="repositoryData.length == 0 && !isFromSearch">
+    <strong><h4>No information in this category</h4></strong>
+</div>

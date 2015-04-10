@@ -1,0 +1,9 @@
+node_modules/*
+.idea/
+*.log
+*.iml
+target/
+.project
+.settings/
+mods/
+com.englishtown~vertx-mod-elasticsearch~1.2.0/

@@ -1,0 +1,12 @@
+{
+    "port": 7000,
+    "oauth_token": "NOT_A_REAL_OAUTH_TOKEN",
+    "repos": [
+        {
+            "name": "Income Service",
+            "uri": "incomeTaxService"
+
+        }
+    ]
+
+}

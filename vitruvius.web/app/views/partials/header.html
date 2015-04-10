@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+    </div>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li ng-class="{ active: isActive('/')}"><a href="#/">About</a></li>
+            <li ng-class="{ active: isActive('/platforms')}"><a href="#/platforms">Platforms</a></li>
+            <li ng-class="{ active: isActive('/services')}"><a href="#/services">Services</a></li>
+            <li ng-class="{ active: isActive('/components')}"><a href="#/components">Components</a></li>
+            <li ng-class="{ active: isActive('/registers')}"><a href="#/registers">Registers</a></li>
+            <li ng-class="{ active: isActive('/validate')}"><a href="#/validate">Validate</a></li>
+            <li ng-class="{ active: isActive('/add')}"><a href="#/add">Add Entry</a></li>
+        </ul>
+        <div align="right">
+            <form name="searchForm" class="navbar-form navbar-right" role="search" ng-submit="submit()">
+                <div class="form-group">
+                    <input type="text" ng-model="query" class="form-control" placeholder="Search" required>
+                </div>
+                <button type="submit" class="btn btn-primary" ng-disabled="searchForm.$invalid">Search</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
